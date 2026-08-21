@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import WorksFilterSkeleton from "@/components/works/WorksFilterSkeleton";
 import WorksFilterView from "@/components/works/WorksFilterView";
 import { getIndustryTags, getTechTags, getWorks } from "@/lib/works/data";
 
@@ -21,7 +22,7 @@ export default async function WorksPage() {
       </p>
 
       <div className="mt-10">
-        <Suspense fallback={<p className="font-sans-jp text-sm text-muted">読み込んでいます…</p>}>
+        <Suspense fallback={<WorksFilterSkeleton />}>
           <WorksFilterView works={works} industryTags={industryTags} techTags={techTags} />
         </Suspense>
       </div>
