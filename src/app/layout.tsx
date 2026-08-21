@@ -19,7 +19,10 @@ const notoSansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sakuyalabs.com"),
+  // Phase 6の判断により本体の実配置先はportfolio.sakuyalabs.com
+  // （sakuyalabs.comは既存のSakuyaLabs Official Websiteが稼働中のため）。
+  metadataBase: new URL("https://portfolio.sakuyalabs.com"),
+  alternates: { canonical: "/" },
   title: {
     default: "SakuyaLabs Portfolio",
     template: "%s | SakuyaLabs Portfolio",
