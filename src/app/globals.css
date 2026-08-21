@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
+/* SakuyaLabs Portfolio デザインシステム（企画書 Phase 2 / CLAUDE.md 準拠）
+   トンマナ：確信・編集的（エディトリアル）・職人的。①〜⑪のどのクライアントワークとも
+   異なる、SakuyaLabs自身の一貫したスタジオブランド。ライトモードのみ。
+   コントラスト比は実装着手前に計算済み（docs/planning.md Phase 2参照）。 */
+@theme {
+  --color-paper: #faf8f4;
+  --color-card: #ffffff;
+  --color-border: #e8e3d9;
+  --color-ink: #1c1a17;
+  --color-muted: #6b6459;
+  --color-gold: #8c5f17;
+  --color-gold-raw: #c9922e;
+
+  --font-fraunces: var(--font-fraunces-google), serif;
+  --font-sans-jp: var(--font-noto-sans-jp), sans-serif;
+
+  --spacing-section: 6rem;
+  --spacing-section-mobile: 3.5rem;
+
+  --ease-product: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--color-border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans-jp);
+}
+
+/* 全インタラクティブ要素のフォーカスリング */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
