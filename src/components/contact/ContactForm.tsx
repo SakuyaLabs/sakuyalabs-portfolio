@@ -104,7 +104,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="font-sans-jp mt-2 self-start rounded-md bg-ink px-7 py-3 text-sm font-medium text-paper transition-colors duration-300 hover:bg-gold disabled:opacity-60"
+        className="font-sans-jp mt-2 self-start rounded-full bg-ink px-7 py-3.5 text-sm font-bold text-paper transition-transform duration-300 hover:-translate-y-0.5 disabled:opacity-60"
       >
         {isSubmitting ? "送信しています…" : "送信する"}
       </button>

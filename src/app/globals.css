@@ -1,20 +1,37 @@
 @import "tailwindcss";
 
-/* SakuyaLabs Portfolio デザインシステム（企画書 Phase 2 / CLAUDE.md 準拠）
-   トンマナ：確信・編集的（エディトリアル）・職人的。①〜⑪のどのクライアントワークとも
-   異なる、SakuyaLabs自身の一貫したスタジオブランド。ライトモードのみ。
-   コントラスト比は実装着手前に計算済み（docs/planning.md Phase 2参照）。 */
+/* SakuyaLabs Portfolio デザインシステム v2（2026-08-21改訂）
+   ユーザー指示により、sakuyalabs.com（既存Official Website）の
+   ビジュアルシステム（~/Developer/SakuyaLabs_Website/style.css）に
+   雰囲気を合わせる。ティール〜アクア〜ヴァイオレットのグラデーション、
+   透明感のあるガラス質感のカード、大きめの角丸、システムフォントスタック。
+   ライトモードのみ。 */
 @theme {
-  --color-paper: #faf8f4;
+  --color-paper: #f8fbfa;
+  --color-paper-2: #f1f7f5;
   --color-card: #ffffff;
-  --color-border: #e8e3d9;
-  --color-ink: #1c1a17;
-  --color-muted: #6b6459;
-  --color-gold: #8c5f17;
-  --color-gold-raw: #c9922e;
+  --color-border: #d7e5e2;
+  --color-ink: #102728;
+  --color-ink-soft: #476363;
+  /* sakuyalabs.com本体の#6e8585は白背景カード上でコントラスト比3.98と4.5未満
+     だったため、比率5.2程度まで暗くして調整（LES-003方針）。 */
+  --color-muted: #587170;
+  --color-gold: #087c78;
+  --color-gold-raw: #20aaa2;
+  --color-teal: #087c78;
+  --color-teal-2: #20aaa2;
+  --color-aqua: #9ee7df;
+  --color-blue: #7ab7f6;
+  --color-violet: #a9a1ff;
 
-  --font-fraunces: var(--font-fraunces-google), serif;
-  --font-sans-jp: var(--font-noto-sans-jp), sans-serif;
+  /* Fraunces/Noto Sans JPのGoogle Font読み込みをやめ、sakuyalabs.com本体と
+     同じシステムフォントスタックに統一する（雰囲気を合わせる指示）。
+     既存コンポーネントの`font-fraunces`/`font-sans-jp`クラスはそのまま残し、
+     参照先のフォントだけをここで統一する（多数ファイルの一括置換を避ける）。 */
+  --font-fraunces: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Hiragino Sans", "Yu Gothic UI",
+    "Yu Gothic", sans-serif;
+  --font-sans-jp: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Hiragino Sans", "Yu Gothic UI",
+    "Yu Gothic", sans-serif;
 
   --spacing-section: 6rem;
   --spacing-section-mobile: 3.5rem;
@@ -31,10 +48,52 @@
   border-color: var(--color-border);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans-jp);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* sakuyalabs.com本体と同じ、固定背景の淡いラジアルグラデーション +
+   ぼかしたアンビエントブロブ。ページをまたいでも同じ「空気感」を保つ。 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(158, 231, 223, 0.22), transparent 30%),
+    radial-gradient(circle at 88% 18%, rgba(122, 183, 246, 0.15), transparent 32%),
+    linear-gradient(180deg, #fbfdfc 0%, #f6faf9 55%, #fbfcfc 100%);
+}
+
+.ambient {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.32;
+  z-index: -2;
+  pointer-events: none;
+}
+.ambient-a {
+  width: 420px;
+  height: 420px;
+  left: -160px;
+  top: 26vh;
+  background: #b6f2e9;
+}
+.ambient-b {
+  width: 480px;
+  height: 480px;
+  right: -200px;
+  top: 4vh;
+  background: #d4d0ff;
 }
 
 /* 全インタラクティブ要素のフォーカスリング */
@@ -43,7 +102,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-teal);
   outline-offset: 3px;
 }
 

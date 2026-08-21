@@ -17,7 +17,7 @@ export default function WorkVisual({ number, brandName }: WorkVisualProps) {
         <span aria-hidden="true" className="h-2 w-2 rounded-full bg-border" />
       </div>
       <div className="flex aspect-[16/9] flex-col items-center justify-center gap-3 bg-paper px-6">
-        <span className="font-fraunces text-5xl font-semibold" style={{ color: "#8C8270" }}>
+        <span className="font-fraunces text-5xl font-semibold" style={{ color: "#476363" }}>
           {number}
         </span>
         <span className="font-sans-jp text-xs text-muted">{brandName}</span>

@@ -36,11 +36,13 @@ export default function WorkDetailView({ work }: WorkDetailViewProps) {
       </nav>
 
       <div className="mt-6 flex flex-wrap items-center gap-2">
-        <span className="font-sans-jp rounded-full bg-gold px-3 py-1 text-xs font-medium text-paper">Concept Project / 架空案件</span>
-        <span className="font-sans-jp rounded-full border border-border px-3 py-1 text-xs text-muted">{work.industryTag}</span>
+        <span className="font-sans-jp rounded-full bg-gradient-to-r from-[#087c78] to-[#229d98] px-3 py-1 text-xs font-bold text-white">
+          Concept Project / 架空案件
+        </span>
+        <span className="font-sans-jp rounded-full border border-border px-3 py-1 text-xs text-ink-soft">{work.industryTag}</span>
       </div>
 
-      <h1 className="font-fraunces mt-5 text-3xl font-semibold text-ink sm:text-4xl">{work.brandName}</h1>
+      <h1 className="font-fraunces mt-5 text-3xl font-bold tracking-tight text-ink sm:text-4xl">{work.brandName}</h1>
       <p className="font-sans-jp mt-2 text-sm text-muted">{work.axisLabel}</p>
 
       <dl className="mt-8 grid grid-cols-1 gap-x-6 gap-y-4 border-t border-b border-border py-6 sm:grid-cols-2">
@@ -104,17 +106,17 @@ export default function WorkDetailView({ work }: WorkDetailViewProps) {
         </p>
       </section>
 
-      <div className="mt-14 flex flex-col gap-4 rounded-lg border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-14 flex flex-col gap-4 rounded-[28px] border border-border/70 bg-white/65 p-6 shadow-[0_16px_45px_rgba(38,88,84,0.035)] sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="font-sans-jp text-xs text-muted">Live Demo</p>
           <p className="font-sans-jp mt-1 text-sm text-ink">{work.liveDemoUrl.replace("https://", "")}</p>
-          <p className="font-sans-jp mt-1 text-xs text-muted">※本番公開時に接続予定のサブドメインです</p>
+          <p className="font-sans-jp mt-1 text-xs text-teal">稼働中のLive Demoです</p>
         </div>
         <a
           href={work.liveDemoUrl}
           target="_blank"
           rel="noreferrer"
-          className="font-sans-jp inline-flex items-center justify-center gap-2 rounded-md bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors duration-300 hover:bg-gold"
+          className="font-sans-jp inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#087c78] to-[#229d98] px-6 py-3.5 text-sm font-bold text-white shadow-[0_14px_32px_rgba(8,124,120,0.18)] transition-transform duration-300 hover:-translate-y-0.5"
         >
           実際のサイトを見る
           <span aria-hidden="true">→</span>
@@ -122,7 +124,7 @@ export default function WorkDetailView({ work }: WorkDetailViewProps) {
       </div>
 
       <div className="mt-6 text-center">
-        <Link href="/contact" className="font-sans-jp text-sm text-ink underline decoration-gold underline-offset-4 hover:text-gold">
+        <Link href="/contact" className="font-sans-jp text-sm text-ink-soft underline decoration-teal underline-offset-4 hover:text-teal">
           この案件について相談する →
         </Link>
       </div>

@@ -20,9 +20,9 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#FAF8F4",
+          backgroundColor: "#f8fbfa",
           backgroundImage:
-            "radial-gradient(circle at 85% 15%, rgba(140,95,23,0.14), transparent 55%), radial-gradient(circle at 10% 90%, rgba(201,146,46,0.16), transparent 45%)",
+            "radial-gradient(circle at 85% 15%, rgba(158,231,223,0.35), transparent 55%), radial-gradient(circle at 10% 90%, rgba(169,161,255,0.28), transparent 45%)",
         }}
       >
         <div
@@ -30,7 +30,7 @@ export default function OpengraphImage() {
             display: "flex",
             fontSize: 28,
             letterSpacing: 6,
-            color: "#8C5F17",
+            color: "#087c78",
             textTransform: "uppercase",
           }}
         >
@@ -42,7 +42,7 @@ export default function OpengraphImage() {
             marginTop: 24,
             fontSize: 58,
             fontWeight: 600,
-            color: "#1C1A17",
+            color: "#102728",
             lineHeight: 1.3,
             maxWidth: 950,
           }}
@@ -54,7 +54,7 @@ export default function OpengraphImage() {
             display: "flex",
             marginTop: 32,
             fontSize: 24,
-            color: "#6B6459",
+            color: "#476363",
           }}
         >
           11 Concept Projects, one portfolio

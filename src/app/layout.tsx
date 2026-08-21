@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
-import { Fraunces, Noto_Sans_JP } from "next/font/google";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces-google",
-  weight: ["500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const notoSansJP = Noto_Sans_JP({
-  variable: "--font-noto-sans-jp",
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+// sakuyalabs.com本体との統一感のため、Google Fontsは使わずシステムフォント
+// スタックに統一している（globals.cssの --font-fraunces / --font-sans-jp 参照）。
 
 export const metadata: Metadata = {
   // Phase 6の判断により本体の実配置先はportfolio.sakuyalabs.com
@@ -34,8 +22,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ja" className={`${fraunces.variable} ${notoSansJP.variable} h-full antialiased`}>
+    <html lang="ja" className="h-full antialiased">
       <body className="flex min-h-full flex-col bg-paper text-ink">
+        <div className="ambient ambient-a" aria-hidden="true" />
+        <div className="ambient ambient-b" aria-hidden="true" />
         <Header />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />

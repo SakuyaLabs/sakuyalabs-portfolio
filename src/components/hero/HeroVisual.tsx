@@ -26,14 +26,14 @@ export default function HeroVisual() {
           y1={centerY}
           x2={node.x}
           y2={node.y}
-          stroke="#e8e3d9"
+          stroke="#c3e2dd"
           strokeWidth={1}
         />
       ))}
       {nodes.map((node, index) => (
-        <circle key={`node-${index}`} cx={node.x} cy={node.y} r={5} fill="#c9922e" opacity={0.85} />
+        <circle key={`node-${index}`} cx={node.x} cy={node.y} r={5} fill="#20aaa2" opacity={0.85} />
       ))}
-      <circle cx={centerX} cy={centerY} r={10} fill="#1c1a17" />
+      <circle cx={centerX} cy={centerY} r={10} fill="#102728" />
     </svg>
   );
 }
