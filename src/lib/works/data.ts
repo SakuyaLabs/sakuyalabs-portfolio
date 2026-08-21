@@ -5,6 +5,7 @@ export type WorkCaseStudy = {
   industryTag: string;
   axisLabel: string;
   persona: string;
+  cvGoal: string;
   challenge: string;
   designIntent: string;
   implementation: string;
@@ -26,6 +27,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "美容院",
     axisLabel: "ブランド世界観の翻訳力 + 予約UX",
     persona: "32歳女性・美容意識高め。深夜でもスマホで予約を完結させたい、隠れ家サロン志向の客層。",
+    cvGoal: "予約完了（リアルタイム予約システム）",
     challenge:
       "「予約が取りづらい隠れ家」であることに価値を感じる客層に対し、深夜でもスマホで完結する予約体験と、静謐な世界観を両立させる必要があった。",
     designIntent:
@@ -43,6 +45,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "飲食店",
     axisLabel: "情報設計・導線集客",
     persona: "40代。記念日や接待で使える店を探しており、雰囲気・予算感・予約の取りやすさを最短で確認したい。",
+    cvGoal: "電話予約・Web予約への遷移",
     challenge:
       "「雰囲気」「予算感」「予約の取りやすさ」を最短で確認したい層に対し、迷わせない情報設計と利用シーン別の導線分岐が必要だった。",
     designIntent:
@@ -60,6 +63,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "ジム",
     axisLabel: "LPライティング × CVR設計",
     persona: "30代男性。過去にダイエットで挫折した経験があり、「本当に変われるのか」への懐疑を持っている。",
+    cvGoal: "無料体験申込フォームの送信",
     challenge:
       "「本当に変われるのか」という懐疑を持つ層に対し、離脱させない縦一本道のLP設計で無料体験申込までを完結させる必要があった。",
     designIntent:
@@ -77,6 +81,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "士業",
     axisLabel: "信頼構築・BtoC向けSEO",
     persona: "50代。初めて弁護士に相談することへの心理的ハードルが高く、「この人になら話せそう」という安心感を最優先で探している。",
+    cvGoal: "相談予約（電話／フォーム／LINE）",
     challenge:
       "初めての相談への心理的ハードルが高い層に対し、敷居を下げるコピーと、検索意図に応える分野別ページの両立が必要だった。",
     designIntent:
@@ -94,6 +99,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "小規模法人",
     axisLabel: "コーポレートの型を崩さない安定感",
     persona: "発注検討者（施主）と、採用検討者（協力会社・求職者）の2軸を1サイトで満たす必要がある。",
+    cvGoal: "お問い合わせフォームの送信",
     challenge:
       "派手な演出よりも「奇をてらわない安定感」そのものが評価軸になる案件で、情報の整理・可読性・更新運用のしやすさを優先する判断が必要だった。",
     designIntent:
@@ -111,6 +117,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "採用サイト",
     axisLabel: "デザイン × UX × コピーの統合力",
     persona: "転職検討中のミドルエンジニア。カルチャーフィットと裁量権を重視し、求人票だけでは判断できない「働く実感」を求めている。",
+    cvGoal: "エントリー（応募）フォームの送信",
     challenge:
       "求人票だけでは伝わらない「働く実感」を求める層に対し、抽象的なバリュー訴求ではなく固有名詞・エピソードで語る必要があった。",
     designIntent:
@@ -128,6 +135,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "ECサイト",
     axisLabel: "決済・カートのフロー実装力",
     persona: "30〜40代、丁寧な暮らし志向。世界観に共感して「モノ」以上の体験として購入する層。",
+    cvGoal: "商品購入（注文確定）",
     challenge:
       "「モノ」以上の体験として購入する層に対し、ブランドの世界観訴求とEC実務（カート・決済・在庫）の両立が必要だった。",
     designIntent:
@@ -145,6 +153,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "ホテル予約",
     axisLabel: "DB設計・予約/決済/管理画面の複雑系",
     persona: "記念日利用の40代夫婦。空室状況と料金をリアルタイムで比較検討したい。",
+    cvGoal: "宿泊予約の確定",
     challenge:
       "空室状況と料金をリアルタイムで比較検討したい層に対し、フロントの予約UXとバックオフィスの在庫管理を一貫して設計する必要があった。",
     designIntent:
@@ -162,6 +171,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "AI Webサービス",
     axisLabel: "AI統合・SaaS型UI設計",
     persona: "中小企業のマーケター。コンテンツ制作の工数を削減したく、実際に触ってみないと信じないタイプ。",
+    cvGoal: "無料サインアップ",
     challenge:
       "「AIを使ったサイトが作れる」ではなく「AIをプロダクトに統合する実装ができる」ことを証明する必要があった。",
     designIntent:
@@ -179,6 +189,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "不動産検索",
     axisLabel: "大量データ・検索/地図UI",
     persona: "一人暮らし検討中の20代。条件を絞り込みながら地図上で物件を探したい。",
+    cvGoal: "物件詳細ページからの問い合わせ",
     challenge: "単純なCRUDではなく、大量データを快適に見せるフロントエンド最適化力そのものが問われる案件だった。",
     designIntent: "地図とリストの2ペイン表示を採用し、地図をドラッグすると結果が絞り込まれるUXを設計した。",
     implementation:
@@ -194,6 +205,7 @@ const WORKS: WorkCaseStudy[] = [
     industryTag: "Tech Showcase",
     axisLabel: "フロントエンド技術力の最大瞬間風速",
     persona: "投資家・提携先候補、およびエンジニア志望の求職者。",
+    cvGoal: "Contactページからの問い合わせ",
     challenge:
       "他10案件が「クライアントワークとしての実装力」の証明である一方、本案件は単独で「技術力の天井」を見せる必要があった。",
     designIntent:
