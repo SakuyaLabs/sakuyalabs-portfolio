@@ -11,14 +11,26 @@ const NAV_LINKS = [
 
 /**
  * サイトヘッダー。複数ページ構成のためナビゲーションを持つ（docs/planning.md IA）。
- * sakuyalabs.com本体と同じロゴ・ピル型ナビゲーションで雰囲気を統一する。
+ * sakuyalabs.com本体と同じロゴサイズ・ピル型ナビゲーションで雰囲気を統一する。
+ * 上部に本体（sakuyalabs.com）へ戻る導線を常設する。
  */
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-paper/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4 sm:px-12 lg:px-20">
+      <div className="border-b border-border/60 bg-white/30">
+        <div className="mx-auto max-w-6xl px-6 py-2 sm:px-12 lg:px-20">
+          <a
+            href="https://sakuyalabs.com"
+            className="font-sans-jp inline-flex items-center gap-1.5 text-xs font-medium text-ink-soft transition-colors duration-300 hover:text-teal"
+          >
+            <span aria-hidden="true">←</span>
+            sakuyalabs.com に戻る
+          </a>
+        </div>
+      </div>
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-3 sm:px-12 lg:px-20">
         <Link href="/" aria-label="SakuyaLabs Portfolio ホーム" className="block">
-          <Image src={logo} alt="SakuyaLabs" priority className="h-8 w-auto sm:h-9" />
+          <Image src={logo} alt="SakuyaLabs" priority className="h-[64px] w-auto sm:h-[82px]" />
         </Link>
         <nav
           aria-label="メインナビゲーション"

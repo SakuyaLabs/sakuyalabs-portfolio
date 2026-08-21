@@ -57,7 +57,7 @@ export default function WorkDetailView({ work }: WorkDetailViewProps) {
       </dl>
 
       <div className="mt-10">
-        <WorkVisual number={work.number} brandName={work.brandName} />
+        <WorkVisual slug={work.slug} number={work.number} brandName={work.brandName} />
       </div>
 
       <section aria-labelledby="challenge-heading" className="mt-12">

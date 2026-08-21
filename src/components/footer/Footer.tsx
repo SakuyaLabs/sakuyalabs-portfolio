@@ -16,10 +16,17 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-12 sm:px-12 lg:px-20">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <Image src={logo} alt="SakuyaLabs" className="h-7 w-auto" />
+            <Image src={logo} alt="SakuyaLabs" className="h-10 w-auto" />
             <p className="font-sans-jp mt-3 max-w-sm text-sm text-ink-soft">
               業種別の設計力・技術力・集客/CVへの理解を1つの職務経歴書として提示する、11プロジェクト構成のポートフォリオ。
             </p>
+            <a
+              href="https://sakuyalabs.com"
+              className="font-sans-jp mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-ink-soft transition-colors duration-300 hover:text-teal"
+            >
+              <span aria-hidden="true">←</span>
+              sakuyalabs.com に戻る
+            </a>
           </div>
           <nav aria-label="フッターナビゲーション">
             <ul className="flex flex-wrap gap-x-6 gap-y-2 font-sans-jp text-sm text-ink-soft">
